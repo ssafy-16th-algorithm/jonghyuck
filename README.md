@@ -1,7 +1,6 @@
 # Java Coding Test Study
 
-> **1차 목표: 삼성 SW 역량테스트 A형 취득**  
-
+> **1차 목표: 삼성 SW 역량테스트 A형 취득**
 
 ---
 
@@ -41,7 +40,8 @@
 - SWEA
 - BOJ
 - Programmers
-- 기타 코딩테스트 및 알고리즘 문제
+- CodeTree
+- 기타 코딩테스트 및 알고리즘 문제(LeetCode,AtCoder..)
 
 ---
 
@@ -114,7 +114,7 @@
 
 ## 디렉터리 구조
 
-플랫폼별로 구분하지 않고 학습한 주차를 기준으로 문제를 관리합니다.
+학습한 주차를 기준으로 문제를 관리합니다. 문제 파일 이름 양식은 자유.
 
 ```text
 java-coding-test/
@@ -123,13 +123,14 @@ java-coding-test/
 ├── week01/
 │   ├── BOJ_2309.java
 │   ├── SWEA_1954.java
-│   └── PGS_12906.java
+│   └── PGS_동굴 탐험.java
+│   └── CDT_트리 판별.java
 │
 ├── week02/
 │   ├── BOJ_2304.java
 │   ├── SWEA_1208.java
-│   └── PGS_42586.java
-│
+│   └── PGS_동굴 탐험.java
+│   └── LTC_486.java
 ├── week03/
 │   └── ...
 │
