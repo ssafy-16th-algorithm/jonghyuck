@@ -136,3 +136,25 @@ java-coding-test/
 │
 
 ```
+## 커밋 메시지 규칙
+
+| 커밋 유형 | 설명 |
+|---|---|
+| `solve` | 문제 풀이 완료 |
+| `unsolved` | 문제를 해결하지 못한 미완성 풀이 저장 |
+| `retry` | 문제 재풀이 |
+| `fix` | 오답 또는 코드 수정 |
+| `docs` | README 및 문서 수정 |
+| `refactor` | 풀이 코드 개선 |
+| `template` | 알고리즘 템플릿 추가 |
+
+### 사용 예시
+
+```text
+solve: BOJ 2309 일곱 난쟁이
+unsolved: BOJ 17472 다리 만들기 2
+retry: BOJ 14502 연구소
+fix: BOJ 2304 인덱스 범위 오류 수정
+docs: week01 README 문제 현황 수정
+refactor: BFS 방문 처리 로직 개선
+template: 조합 알고리즘 템플릿 추가
