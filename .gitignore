@@ -30,4 +30,4 @@ bin/
 .DS_Store
 
 .idea/
-study-algorithm.iml
+*.iml
