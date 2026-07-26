@@ -8,8 +8,8 @@ import java.io.*;
 // 모든 섬 연결하는 다리의 최솟값 출력. 모든 섬 연결 불가하면 -1
 public class BOJ_17472 {
                     //   위 오 아래 왼
-    static int [] dr = {-1, 0, 1, 0};
-    static int [] dc = {0, 1, 0, -1};
+    static int [] dx = {-1, 0, 1, 0};
+    static int [] dy = {0, 1, 0, -1};
     static int [][] map;
     static int N;
     static int M;
@@ -63,8 +63,8 @@ public class BOJ_17472 {
         map[row][col] = islandNum;
 
         for(int i = 0; i < 4 ; i++){
-            int nextRow = row + dr[i];
-            int nextCol = col + dc[i];
+            int nextRow = row + dx[i];
+            int nextCol = col + dy[i];
 
 
             // map 밖
@@ -89,8 +89,8 @@ public class BOJ_17472 {
         int bridgeLength = 0;
         while(true){
             for(int i = 0; i < 4; i++){
-                int nextRow = row + dr[i];
-                int nextCol = col + dc[i];
+                int nextRow = row + dx[i];
+                int nextCol = col + dy[i];
 
                 if (nextRow < 0 || nextRow >= N || nextCol < 0 || nextCol >= M) {
                     return;
