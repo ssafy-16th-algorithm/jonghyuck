@@ -142,12 +142,13 @@ class SWEA_프로세서연결하기 {
                 continue;
             }
 
-            // 현재 방향으로 전선이 설치된 상태에서 다음 코어 탐색
+            // 현재 방향으로 전선이 설치된 상태에서 다음 코어 탐색(현재 코어를 연결한 경우)
             dfs(count + 1, length + currentLength, connect + 1);
 
             // 다른 방향을 탐색하기 위해 현재 설치한 전선을 제거
             removeWire(row, col, direction);
         }
+        // 미연결 경우는 마지막에 한 번만 탐색
         dfs(count + 1, length, connect);
     }
 
