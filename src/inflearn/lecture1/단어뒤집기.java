@@ -1,5 +1,4 @@
-package inflearn;
-import java.util.*;
+package inflearn.lecture1;
 import java.io.*;
 
 public class 단어뒤집기{

@@ -1,6 +1,5 @@
-package inflearn;
+package inflearn.lecture1;
 
-import java.util.*;
 import java.io.*;
 
 public class 숫자만추출{

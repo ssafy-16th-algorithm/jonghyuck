@@ -1,5 +1,4 @@
-package inflearn;
-import java.util.*;
+package inflearn.lecture1;
 import java.io.*;
 
 // toCharArray 활용
