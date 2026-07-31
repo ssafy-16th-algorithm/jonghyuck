@@ -1,10 +1,23 @@
 package week2;
+/*
+Union-Find를 써야하는 문제 판별 :
+두 그룹을 합쳐야 하는 문제
+1) 사이클 발생 여부 확인하는 문제
+2) 같은 집합인지 확인하는 문제
+3) 간선 하나씩 추가
+4) 모든 노드를 최소 비용으로 연결
+5) 최소 신장 트리
+6) 간선 비용의 합을 최소화
 
+1. 합치기: union(a, b)
+2. 같은 그룹인지 확인: find(a) == find(b)
+1번과 2번을 연결한다.
+2번과 3번을 연결한다.
+1번과 3번이 연결되어 있는지 확인한다.
+*/
 class Solution {
-
     // 각 노드의 부모를 저장하는 배열
     int[] parent;
-
     public int[] findRedundantConnection(int[][] edges) {
 
         // 노드 번호가 1부터 시작하므로 길이를 edges.length + 1로 설정
