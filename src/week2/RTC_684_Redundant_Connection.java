@@ -23,7 +23,7 @@ class Solution {
         // 노드 번호가 1부터 시작하므로 길이를 edges.length + 1로 설정
         parent = new int[edges.length + 1];
 
-        // 처음에는 자기 자신을 부모로 설정
+        // 자기 자신을 부모로 설정
         for (int i = 1; i < parent.length; i++) {
             parent[i] = i;
         }
