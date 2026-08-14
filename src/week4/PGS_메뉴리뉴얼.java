@@ -3,7 +3,7 @@ package week4;
 import java.util.*;
 import java.io.*;
 
-class Solution {
+class PGS_메뉴리뉴얼 {
     static Map <String, Integer> map = new HashMap<>();
     public String[] solution(String[] orders, int[] course) {
 

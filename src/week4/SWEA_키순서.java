@@ -8,16 +8,14 @@ class SWEA_키순서
 {
     static List<Integer>[] graph;
     static List<Integer>[] reverseGraph;
-    static boolean[] visited;
     static int N;
     static int M;
-    static int count;
     public static void main(String args[]) throws Exception
     {
         // 해당 학생보다 작은 친구 + 큰친구 = N-1이면 해당 학생은 순서를 아는것
         //
 
-        System.setIn(new FileInputStream("jonghyuck/src/week4/sample_input.txt"));
+//        System.setIn(new FileInputStream("jonghyuck/src/week4/sample_input.txt"));
 
 		/*
 		   표준입력 System.in 으로부터 스캐너를 만들어 데이터를 읽어옵니다.
@@ -55,15 +53,11 @@ class SWEA_키순서
             }
 
             for(int i = 1; i <= N ; i++){
-                visited = new boolean[N + 1];
-                count = 0;
-                dfs(i, graph);
-                int taller = count;
 
-                visited = new boolean[N + 1];
-                count = 0;
-                dfs(i, reverseGraph);
-                int shorter = count;
+                int taller = dfs(i,graph);
+
+                int shorter = dfs(i, reverseGraph);
+
 
                 if(taller + shorter == N - 1){
                     answer ++;
@@ -80,19 +74,24 @@ class SWEA_키순서
         }
     }
 
-    static void dfs(int current, List<Integer>[] graph){
-        visited[current] = true;
-        for(int next : graph[current]){
+    static int dfs(int start, List<Integer>[] graph){
+        boolean [] visited = new boolean[N + 1];
+        int count = 0;
+        Deque <Integer> stack = new ArrayDeque<>();
+        stack.push(start);
+        visited[start] = true;
 
-            if(!visited[next]){
-                visited[next] = true;
-                count ++;
+        while (!stack.isEmpty()){
+            int current = stack.pop();
+            for(int next : graph[current]){
+                if(!visited[next]){
+                    visited[next] = true;
+                    count ++;
 
-
-                dfs(next, graph);
-
+                    stack.push(next);
+                }
             }
         }
-
+        return count;
     }
 }
