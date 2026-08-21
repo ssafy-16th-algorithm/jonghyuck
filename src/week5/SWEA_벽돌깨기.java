@@ -9,6 +9,10 @@ class SWEA_벽돌깨기
     static int W;
     static int H;
     static int map[][];
+    static boolean visited [][];
+    // 상하좌우
+    static int dx [] = {0, 0, -1, 1};
+    static int dy [] = {-1, 1, 0, 0};
     public static void main(String args[]) throws Exception
     {
 
@@ -34,10 +38,12 @@ class SWEA_벽돌깨기
             W = Integer.parseInt(st.nextToken());
             H = Integer.parseInt(st.nextToken());
 
-            map = new int [W][H];
-            for(int i = 0; i < W; i ++){
+            map = new int [H][W];
+            for(int i = 0; i < H; i ++){
+
                 st = new StringTokenizer(br.readLine());
-                for(int j = 0; j < H; j++){
+
+                for(int j = 0; j < W; j++){
                     map[i][j] = Integer.parseInt(st.nextToken());
                 }
             }
@@ -46,8 +52,70 @@ class SWEA_벽돌깨기
 
         }
     }
-    static public void breakBlock(){
+    // N이 작다 => 기본적으로 DFS
+    // 폭발은 BFS?
 
+    // 블록 깨는 함수
+    static public void breakBlock(int row, int col){
+        Deque<int[]> queue = new ArrayDeque<>();
+
+        int startBoom = map[row][col];
+
+        queue.offer(new int[] {row, col, startBoom});
+
+        map[row][col] = 0;
+        while(!queue.isEmpty()){
+            int current [] = queue.poll();
+            int currentRow = current[0];
+            int currentCol = current[1];
+            int boom = current[2];
+
+            for(int i = 0 ; i < 4; i ++){
+                for(int j = 1; j < boom; j++){
+                    int nextRow = currentRow + dx[i] * j;
+                    int nextCol = currentCol + dy[i] * j;
+
+                    if(nextRow < 0 || nextRow >= H || nextCol < 0 || nextCol >= W){
+                        break;
+                    }
+                    if(map[nextRow][nextCol] == 0){
+                        continue;
+                    }
+                    int nextBoom = map[nextRow][nextCol];
+
+                    map[nextRow][nextCol] = 0;
+
+                    queue.offer(new int[] {nextRow, nextCol, nextBoom});
+                }
+
+
+            }
+        }
+
+
+    }
+
+    static int dfs(int count){
+        int remain = 0;
+        if(count == N){
+            // remain
+            for(int i = 0 ; i < H; i++){
+                for(int j = 0 ; j < W; j++){
+                    if(map[H][W] != 0){
+                       remain ++;
+                    }
+                }
+            }
+            return remain;
+        }
+        for(int col = 0; col < W; col++){
+
+            dfs(count + 1);
+        }
+        return 0;
+    }
+
+    static void move(){
 
     }
 
