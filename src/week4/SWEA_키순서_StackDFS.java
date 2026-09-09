@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 
 
-class SWEA_키순서
+class SWEA_키순서_StackDFS
 {
     static List<Integer>[] graph;
     static List<Integer>[] reverseGraph;
