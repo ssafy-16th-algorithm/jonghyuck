@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 
 public class SWEA_보급로 {
 
-    // 가중치가 작은 순으로 정렬하고, 객체 생성을 편하게 하기 위한 클래스 선언
+    // 가중치가 작은 순으로 정렬 compareTo @Override
     static class Node implements Comparable<Node>{
         int r;
         int c;
